@@ -2,7 +2,6 @@
 - **SMARCLE 적응**
   - github, Markdown 문법의 사용
   - 개발자로서의 기본 갖추기
-  - 인공지능 경험(teachable machine)
 
 - **아두이노**
   - 아두이노 기초와 응용
