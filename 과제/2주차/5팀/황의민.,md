@@ -1,3 +1,6 @@
+<img width="1718" height="1410" alt="Image" src="https://github.com/user-attachments/assets/6a36cb8b-c838-480a-a756-97bb5dad8ef9" />
+
+
 const int buzzerPin = 8;
 const int redLed = 3;
 const int blueLed = 4;
