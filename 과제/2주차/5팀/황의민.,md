@@ -1,0 +1,31 @@
+const int buzzerPin = 8;
+const int redLed = 3;
+const int blueLed = 4;
+
+void setup() {
+  pinMode(redLed, OUTPUT);
+  pinMode(blueLed, OUTPUT);
+}
+
+void loop() {
+
+  // 높은음 → 빨간 LED
+  digitalWrite(redLed, HIGH);
+  digitalWrite(blueLed, LOW);
+  tone(buzzerPin, 740);
+  delay(500);
+
+  noTone(buzzerPin);
+  digitalWrite(redLed, LOW);
+  delay(100);
+
+  // 낮은음 → 파란 LED
+  digitalWrite(blueLed, HIGH);
+  tone(buzzerPin, 523);
+  delay(500);
+
+  noTone(buzzerPin);
+  digitalWrite(blueLed, LOW);
+  delay(100);
+}
+
