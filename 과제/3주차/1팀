@@ -1,0 +1,74 @@
+// LED 핀 설정
+int redLED = 13;
+int yellowLED = 12;
+int greenLED = 11;
+
+// 초음파 센서 핀 설정
+int trigPin = 9;
+int echoPin = 10;
+
+long duration;
+int distance;
+
+void setup() {
+  // LED 출력 설정
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+
+  // 초음파 센서 설정
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  // 초음파 발사
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  // 거리 측정
+  duration = pulseIn(echoPin, HIGH);
+
+  // cm 단위 변환
+  distance = duration * 0.034 / 2;
+
+  Serial.print("Distance : ");
+  Serial.println(distance);
+
+  // 임계값 조건
+  if (distance <= 10) {
+
+    // 빨간불만 켜기
+    digitalWrite(redLED, HIGH);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(greenLED, LOW);
+
+  } else {
+
+    // 초록불
+    digitalWrite(greenLED, HIGH);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(redLED, LOW);
+    delay(3000);
+
+    // 노란불
+    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, HIGH);
+    digitalWrite(redLED, LOW);
+    delay(1000);
+
+    // 빨간불
+    digitalWrite(greenLED, LOW);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(redLED, HIGH);
+    delay(3000);
+  }
+}
