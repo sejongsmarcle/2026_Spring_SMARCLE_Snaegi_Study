@@ -1,4 +1,4 @@
-# 2026_Spring_SMARCLE_Snaegi_Study/
+# 2026_Spring_SMARCLE_Snaegi_Study
 - **SMARCLE 적응**
   - github, Markdown 문법의 사용
   - 개발자로서의 기본 갖추기
